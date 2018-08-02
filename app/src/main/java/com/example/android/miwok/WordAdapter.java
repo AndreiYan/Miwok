@@ -12,16 +12,20 @@ import java.util.ArrayList;
 
 public class WordAdapter extends ArrayAdapter<Word> {
 
-    public WordAdapter(Activity context, ArrayList<Word> words) {
+    public WordAdapter(Context context, ArrayList<Word> words) {
         super(context, 0, words);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Word currentWord = getItem(position);
+        
         View listItemView = convertView;
-
-
+        if (listItemView == null) {
+            listItemView = LayoutInflater.from(getContext()).inflate(
+                    R.layout.list_item, parent, false);
+        }
+        Word currentWord = getItem(position);
+        
         // Find the TextView in the list_item.xml layout with the ID version_name
         TextView miwokTextView = (TextView) listItemView.findViewById(R.id.miwok_text_view);
         // Get the version name from the current AndroidFlavor object and
