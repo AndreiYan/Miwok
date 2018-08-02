@@ -14,7 +14,7 @@ public class FamilyActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.list_item);
+        setContentView(R.layout.word_list);
 
         //Array of the numbers
         ArrayList<Word> words = new ArrayList<Word>();
